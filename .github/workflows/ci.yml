@@ -14,8 +14,8 @@ jobs:
         distribution: temurin
         java-version: 8
     - name: Build and Test
-      if: github.event.pullrequest
+      if: github.event.pull_request
       run: sbt test
     - name: Build and Test
-      if: !github.event.pullrequest
+      if: github.event.pusher
       run: sbt "testOnly -- -n MyTag"
