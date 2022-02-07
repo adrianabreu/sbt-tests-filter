@@ -17,4 +17,9 @@ class ExampleSpec extends AnyFlatSpec {
     val diff = 4 - 1
     assert(diff === 3)
   }
+
+  it must "multiply correctly" taggedAs(MyTag) in {
+    val total = 4 * 2
+    assert(total === 8)
+  }
 }
